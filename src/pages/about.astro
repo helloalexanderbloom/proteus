@@ -1,56 +1,68 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-
-const pageTitle = "About Me";
-
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = false;
-const goal = 3;
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = 'About';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-        <Navigation />
-
-        <h1 class="text-purple-700 text-3xl">{pageTitle}</h1>
-
-        <p>Here are a few facts about me:</p>
-        <ul>
-        <li>My name is {identity.firstName}.</li>
-        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-        {identity.hobbies.length >= 2 &&
-            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-        }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-        {skills.map((skill) => <li>{skill}</li>)}
-        </ul>
-
-        {happy && <p>I am happy to be learning Astro!</p>}
-
-        {finished && <p>I finished this tutorial!</p>}
-
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-
-        <Footer />
-      </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <div class="flex flex-col items-center space-y-6 sm:space-y-5 text-xl px-[8%] sm:px-[20%] pt-5 pb-5 sm:pt-10 sm:pb-10 text-gray-800">
+        <blockquote class="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+            "Proteus aims to create opportunities for students and faculty to responsibly advance knowledge, skills, education, 
+            collaboration and innovation in biotechnology by connecting healthcare & medical, STEM, social sciences & education,
+            arts & humanities, law, business and industry specialities together."
+        </blockquote>
+        <p>
+            Proteus: The Biotechnology Society at the University of Bristol has a mission to create opportunities for university
+            students and faculty members to advance their knowledge, skills, education, collaboration and responsible innovation 
+            in the vital and growing field of biotechnology across areas like synthetic biology, genetic engineering, biomaterials, 
+            and more.
+        </p>
+        <p>
+            We aim to assist students interested in pursuing further studies or a career in biotechnology, by providing access to 
+            resources, mentoring, hands-on experience, and a supportive community while at the University of Bristol. We aim to help
+            prepare and guide students for studies or professional roles in biotech, offering practical knowledge and experience in
+            the field not currently readily available for all students at the university. Our goal is to fully equip those eager to
+            take the next steps in this complex and high-demand field.
+        </p>
+        <p>
+            Key areas of interest include rejuvenation biotechnologies such as cellular therapies to reverse the ageing process; 
+            fully immersive and hyper-realistic virtual reality systems that enable enriched experiences and environments;
+            non-invasive brain-computer interfaces to facilitate seamless interactions between the human mind and external systems;
+            replacement organs and cybernetic enhancements using biocompatible materials and synthetic biology; genetic engineering
+            approaches for enhancing rehabilitation and human capacities; cryopreservation of humans for potential future 
+            resuscitation; leveraging data analysis, machine learning models, virtual patient representations, and lab automation to
+            advance diagnostics and pharmacology; advanced robotics and artificial intelligence to augment human skills and automate
+            manual tasks; and mind uploading techniques to digitise human consciousness for simulation or integration with other
+            systems
+        </p>
+        <p>
+            We have a vital interest in proactively fostering diversity and inclusion across gender, race, culture, and academic
+            and professional backgrounds from the earliest stages of biotechnology's emergence. We believe embracing a multiplicity
+            of perspectives is crucial to responsibly innovating complex new technologies that profoundly impact human capacities
+            and society. Without diversity now, we risk harm by allowing narrow views to dominate - a repeated challenge with
+            advances. Our priority is gathering bright minds across divides to ask difficult questions, shape wise policies, guide
+            an ethical trajectory, enhance understanding, and prioritise the betterment of all. If guided conscientiously,
+            biotechnologies offer tremendous promise; if wielded by the few, they endanger the many.
+        </p>
+        <p>
+            A further aim is cultivating entrepreneurial drive within our membership - supporting both independent ventures and 
+            intrapreneurially pursuits transforming organisations from within. We will empower unified idea exchange and pilot
+            project development translating insights into societal impacts. We aim to support biotech innovation by connecting
+            medical, engineering, science, product design, business and industry specialties. With guidance resources demystifying
+            processes from IP protection to attracting funding, we can illuminate pathways for both student-led startups as well as
+            mentorship programs placing visionary graduates within traditional companies hungry for disruption from within.
+        </p>
+        <p>
+            We envision a future where technological innovation allows humanity to overcome current limitations and radically 
+            enhance physical, cognitive, and psychological functioning for the betterment of all. Radical advancements gently but
+            decisively achieved in longevity, cognition, capability, and well-being may fundamentally reshape life quality
+            and opportunity. People could experience robust health and vitality lasting centuries, achieve unrivalled memory
+            formations, access immense knowledge databases, communicate concepts without speech, travel and experience immersive
+            virtual worlds, integrate their selfhood into supportive networks, swap biological parts like electronics, slow or pause
+            aging through cellular treatments, pass extreme planetary conditions easily through bio-adaptations, directly expand
+            emotional and sensory capabilities, and integrate their minds into powerful synthetic systems.
+        </p>
+        <p>
+            While realising such incredible futures in a wise, equitable and uplifting manner requires judicious navigation of
+            risks, they undeniably signify immense possibility for the human journey ahead, and Proteus aims to play a part in that.
+        </p>
+    </div>
+</BaseLayout>
